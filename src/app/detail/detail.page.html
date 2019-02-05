@@ -3,9 +3,20 @@
     <ion-title>detail</ion-title>
   </ion-toolbar>
 </ion-header> -->
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button
+            [text]="buttonText"
+            [icon]="buttonIcon">
+        </ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content padding>
+<ion-content *ngIf="article">
 
+  
   <!-- <ion-slides pager="true" [options]="slideOpts" scrollbar="true">
     <ion-slide>
       <h1>Slide 1</h1>
@@ -18,11 +29,37 @@
     </ion-slide>
   </ion-slides> -->
 
-  Detail
+  <img [src]="article.url">
 
-  <ion-item *ngIf="article">
-    {{article.id}} - {{article.title}}
-  </ion-item>
+  
+
+  <ion-content padding>
+
+      <h2>{{article.title}}</h2>
+      <p>{{article.body}}</p>
+    
+      <ion-row>
+          <ion-col>
+            <ion-button ion-button icon-start clear small>
+              <ion-icon name="logo-facebook"></ion-icon>
+              <!-- <div>Facebook</div> -->
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button ion-button icon-start clear small>
+             <ion-icon name="logo-twitter"></ion-icon>
+              <!-- <div>Twitter</div> -->
+            </ion-button>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              11h ago
+            </ion-note>
+          </ion-col>
+        </ion-row>
+  </ion-content>
+ 
+
 
 
   

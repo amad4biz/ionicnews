@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Observable } from 'rxjs';
+
 import { Router } from '@angular/router';
 import { Article } from '../detail/detail.page';
+import { ModalController } from '@ionic/angular';
+import { ModalComponent } from '../modal/modal.component';
+
 
 @Component({
   selector: 'app-home',
@@ -14,7 +17,7 @@ export class HomePage  {
 news: any;
 article: Article;
 
-constructor(private service: ApiService, private router: Router){
+constructor(private service: ApiService, private router: Router, public modalCtrl: ModalController){
 
 }
 
@@ -32,6 +35,19 @@ getNews(){
     this.news = response
 
   })
+}
+
+async create(){
+
+  const modal = await this.modalCtrl.create({
+            
+    component: ModalComponent,
+    animated: true,
+    showBackdrop: true
+  });
+
+  return await modal.present();
+
 }
 
 
