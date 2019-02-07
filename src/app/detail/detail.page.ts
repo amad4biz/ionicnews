@@ -25,13 +25,8 @@ export class DetailPage implements OnInit {
     effect: 'flip'
   };
 
-  items : Article[]
-  news: any
-  id: number;
-  articleID: any;
-  title: any;
- 
-  constructor(private route: ActivatedRoute, private service: ApiService) {
+
+   constructor(private route: ActivatedRoute, private service: ApiService) {
  
    }
 
