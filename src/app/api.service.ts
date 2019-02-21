@@ -18,7 +18,9 @@ export class ApiService {
   dataUrl = "https://www.reddit.com/r";
   //localUrl = "http://jsonplaceholder.typicode.com/posts/";
 
-  localUrl = "http://localhost:3000/news/"
+  localUrl = "http://localhost:3000/news/";
+
+  bookUrl = "http://localhost:5001/api/books"
 
   articles: any[]
 
@@ -46,6 +48,12 @@ export class ApiService {
     return this.http.get<Article[]>(this.localUrl);
   }
 
+
+  postBook(book){
+
+     return this.http.post(this.bookUrl, book);
+
+  }
   getSingle(id: number){
 
     return this.getOne(id)
@@ -62,4 +70,6 @@ export class ApiService {
     let body = res;
     return body || { };
   }
+
+
 }

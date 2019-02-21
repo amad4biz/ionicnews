@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.page.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePage implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+
+  
   }
 
+
+  
 }

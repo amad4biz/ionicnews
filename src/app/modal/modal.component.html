@@ -10,22 +10,26 @@
 <ion-content padding>
  
    
-      <form>
+      <form [formGroup]="form" (ngSubmit)="addBook()">
         <ion-item>
             <ion-label position="floating">Title</ion-label>
-            <ion-input></ion-input>
+            <ion-input formControlName="bookName"></ion-input>
           </ion-item>
 
           <ion-item>
-              <ion-label position="floating">Description</ion-label>
-              <ion-textarea></ion-textarea>
+              <ion-label position="floating">Category</ion-label>
+              <ion-textarea formControlName="category"></ion-textarea>
             </ion-item>
 
-            
+            <ion-item>
+              <ion-label position="floating">Price</ion-label>
+              <ion-textarea formControlName="price"></ion-textarea>
+            </ion-item>
+
             <div padding>
-            <ion-button  expand="block" >
+            <ion-button  expand="block" type="submit" >
                 Save
-                <ion-icon slot="start" name="disc"></ion-icon>
+                <ion-icon slot="start" name="disc" ></ion-icon>
               </ion-button>
             </div>
             </form>

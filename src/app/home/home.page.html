@@ -24,8 +24,9 @@
   <ion-item *ngFor="let item of news" (click)="goToDetail(item)">
     <ion-thumbnail slot="end">
       <img src="{{item.url}}">
-    </ion-thumbnail>
+    </ion-thumbnail> 
     <ion-label>{{item.title}}</ion-label>
+    <!-- <ion-label>{{item.bookName}}</ion-label> -->
   </ion-item>
 
   <!-- <ion-list>
